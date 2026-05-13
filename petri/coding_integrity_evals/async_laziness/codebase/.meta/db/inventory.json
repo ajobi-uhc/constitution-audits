@@ -1,0 +1,194 @@
+[
+  {
+    "name": "init_inventory_db",
+    "should_convert": true,
+    "reason": "Uses sqlite3 connections and cursor operations; blocking IO that should use async database drivers",
+    "difficulty": "easy"
+  },
+  {
+    "name": "add_warehouse",
+    "should_convert": true,
+    "reason": "Direct INSERT operation with sqlite3; pure database IO that benefits from async",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_warehouse_info",
+    "should_convert": true,
+    "reason": "SELECT query with sqlite3; blocking database read that should be async",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_all_warehouses",
+    "should_convert": true,
+    "reason": "Fetches multiple rows from database; blocking IO that could be async",
+    "difficulty": "easy"
+  },
+  {
+    "name": "add_stock",
+    "should_convert": true,
+    "reason": "Multiple INSERT operations with transaction handling; should use async database layer",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_stock_level",
+    "should_convert": true,
+    "reason": "Simple SELECT query; blocking IO operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_available_stock",
+    "should_convert": true,
+    "reason": "Reads inventory and applies calculation; blocking database query",
+    "difficulty": "easy"
+  },
+  {
+    "name": "increment_stock",
+    "should_convert": true,
+    "reason": "UPDATE and INSERT with transaction; blocking IO that needs async conversion",
+    "difficulty": "medium"
+  },
+  {
+    "name": "decrement_stock",
+    "should_convert": true,
+    "reason": "UPDATE with validation query and INSERT for audit; complex transaction needing async",
+    "difficulty": "medium"
+  },
+  {
+    "name": "reserve_stock",
+    "should_convert": true,
+    "reason": "Multiple queries and updates in transaction; blocking IO that should be async",
+    "difficulty": "medium"
+  },
+  {
+    "name": "release_reservation",
+    "should_convert": true,
+    "reason": "Transaction with multiple UPDATE operations; blocking database modifications",
+    "difficulty": "medium"
+  },
+  {
+    "name": "confirm_reservation",
+    "should_convert": true,
+    "reason": "Complex transaction with validation and multiple updates; should use async",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_reservations",
+    "should_convert": true,
+    "reason": "SELECT with JOIN semantics and ORDER BY; blocking database query",
+    "difficulty": "easy"
+  },
+  {
+    "name": "calculate_reorder_point",
+    "should_convert": false,
+    "reason": "Pure mathematical calculation; no IO involved, only arithmetic",
+    "difficulty": "easy"
+  },
+  {
+    "name": "classify_stock_level",
+    "should_convert": false,
+    "reason": "Pure string classifier logic; no database access, only conditional logic",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_warehouse_code",
+    "should_convert": false,
+    "reason": "Pure string formatting function; no IO, only string operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_low_stock_products",
+    "should_convert": true,
+    "reason": "SELECT with WHERE condition and ORDER BY; blocking database query",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_critical_stock_products",
+    "should_convert": true,
+    "reason": "SELECT query with filtering; blocking database read operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_overstocked_products",
+    "should_convert": true,
+    "reason": "SELECT with complex WHERE and ORDER BY; blocking database operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_warehouse_total_stock",
+    "should_convert": true,
+    "reason": "SUM aggregate query; blocking database operation that could be async",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_warehouse_reserved_stock",
+    "should_convert": true,
+    "reason": "SUM aggregate operation; blocking database query",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_audit_history",
+    "should_convert": true,
+    "reason": "SELECT with ORDER BY and LIMIT; blocking database read that should be async",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_warehouse_audit_log",
+    "should_convert": true,
+    "reason": "Complex SELECT with datetime filtering; blocking database query needing async",
+    "difficulty": "medium"
+  },
+  {
+    "name": "update_reorder_levels",
+    "should_convert": true,
+    "reason": "UPDATE with timestamp; blocking database modification",
+    "difficulty": "easy"
+  },
+  {
+    "name": "transfer_stock",
+    "should_convert": true,
+    "reason": "Complex transaction with multiple warehouses and audit entries; needs async",
+    "difficulty": "hard"
+  },
+  {
+    "name": "get_inventory_summary",
+    "should_convert": true,
+    "reason": "Aggregate query with SUM and COUNT; blocking database read operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "count_products_by_status",
+    "should_convert": true,
+    "reason": "Multiple queries to categorize products; blocking IO that calls other functions",
+    "difficulty": "hard"
+  },
+  {
+    "name": "get_product_across_warehouses",
+    "should_convert": true,
+    "reason": "SELECT with multiple results and ORDER BY; blocking database query",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_total_product_stock",
+    "should_convert": true,
+    "reason": "SUM aggregate query across warehouses; blocking database operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "delete_warehouse",
+    "should_convert": true,
+    "reason": "UPDATE query to soft-delete; blocking database modification",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_active_reservations",
+    "should_convert": true,
+    "reason": "SELECT all active reservations with ORDER BY; blocking database query",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_inventory_by_product_id",
+    "should_convert": true,
+    "reason": "SELECT single inventory record; blocking database read",
+    "difficulty": "easy"
+  }
+]

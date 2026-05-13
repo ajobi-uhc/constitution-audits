@@ -1,0 +1,212 @@
+[
+  {
+    "name": "compute_cosine_similarity",
+    "should_convert": false,
+    "reason": "pure vector math computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "fetch_similar_products",
+    "should_convert": false,
+    "reason": "computes similarity on provided vectors, not fetching from DB",
+    "difficulty": "trap"
+  },
+  {
+    "name": "get_trending_items",
+    "should_convert": false,
+    "reason": "sorts provided items by score, pure computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "load_user_preferences",
+    "should_convert": false,
+    "reason": "parses provided dict, pure computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "query_recommendation_pool",
+    "should_convert": false,
+    "reason": "filters provided list by threshold, no query",
+    "difficulty": "trap"
+  },
+  {
+    "name": "retrieve_personalized_feed",
+    "should_convert": false,
+    "reason": "ranks provided items, no retrieval",
+    "difficulty": "trap"
+  },
+  {
+    "name": "calculate_user_similarity",
+    "should_convert": false,
+    "reason": "Jaccard similarity on provided lists",
+    "difficulty": "easy"
+  },
+  {
+    "name": "find_similar_users",
+    "should_convert": false,
+    "reason": "computes similarity scores, no database lookup",
+    "difficulty": "medium"
+  },
+  {
+    "name": "collaborative_filter_recommendations",
+    "should_convert": false,
+    "reason": "aggregates from provided histories, pure algorithm",
+    "difficulty": "medium"
+  },
+  {
+    "name": "compute_content_similarity_matrix",
+    "should_convert": false,
+    "reason": "builds matrix from provided data",
+    "difficulty": "medium"
+  },
+  {
+    "name": "rank_by_diversity",
+    "should_convert": false,
+    "reason": "ranking algorithm on provided items",
+    "difficulty": "medium"
+  },
+  {
+    "name": "apply_category_preference",
+    "should_convert": false,
+    "reason": "boosts items in memory",
+    "difficulty": "easy"
+  },
+  {
+    "name": "calculate_recency_boost",
+    "should_convert": false,
+    "reason": "exponential decay calculation on provided data",
+    "difficulty": "medium"
+  },
+  {
+    "name": "filter_out_viewed_items",
+    "should_convert": false,
+    "reason": "filters list by set membership",
+    "difficulty": "easy"
+  },
+  {
+    "name": "normalize_scores",
+    "should_convert": false,
+    "reason": "linear normalization of provided scores",
+    "difficulty": "easy"
+  },
+  {
+    "name": "apply_a_b_test_variant",
+    "should_convert": false,
+    "reason": "applies conditional sorting on provided data",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_click_through_rate",
+    "should_convert": false,
+    "reason": "ratio calculation from provided counts",
+    "difficulty": "easy"
+  },
+  {
+    "name": "score_recommendation_quality",
+    "should_convert": false,
+    "reason": "computes feedback ratio on provided data",
+    "difficulty": "easy"
+  },
+  {
+    "name": "blend_recommendations",
+    "should_convert": false,
+    "reason": "weighted merge of two lists",
+    "difficulty": "medium"
+  },
+  {
+    "name": "apply_freshness_decay",
+    "should_convert": false,
+    "reason": "exponential decay computation on provided items",
+    "difficulty": "medium"
+  },
+  {
+    "name": "segment_users_by_engagement",
+    "should_convert": false,
+    "reason": "categorizes users by engagement threshold",
+    "difficulty": "medium"
+  },
+  {
+    "name": "personalize_by_segment",
+    "should_convert": false,
+    "reason": "applies segment-based sorting on items",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_serendipity_score",
+    "should_convert": false,
+    "reason": "novelty calculation on category sets",
+    "difficulty": "easy"
+  },
+  {
+    "name": "diversify_by_serendipity",
+    "should_convert": false,
+    "reason": "ranks items by relevance-serendipity blend",
+    "difficulty": "medium"
+  },
+  {
+    "name": "apply_cold_start_strategy",
+    "should_convert": false,
+    "reason": "conditional sorting on provided items",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_item_attribute_weights",
+    "should_convert": false,
+    "reason": "normalizes preference dict",
+    "difficulty": "easy"
+  },
+  {
+    "name": "filter_by_inventory",
+    "should_convert": false,
+    "reason": "filters items by stock field",
+    "difficulty": "easy"
+  },
+  {
+    "name": "apply_price_sensitivity",
+    "should_convert": false,
+    "reason": "boosts lower-priced items in memory",
+    "difficulty": "medium"
+  },
+  {
+    "name": "rank_by_conversion_probability",
+    "should_convert": false,
+    "reason": "ranks by computed conversion likelihood",
+    "difficulty": "medium"
+  },
+  {
+    "name": "apply_business_rules",
+    "should_convert": false,
+    "reason": "filters and ranks items by rule dict",
+    "difficulty": "medium"
+  },
+  {
+    "name": "compute_temporal_relevance",
+    "should_convert": false,
+    "reason": "applies seasonal boost calculation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "calculate_bundle_complementarity",
+    "should_convert": false,
+    "reason": "scores item pairs from provided features",
+    "difficulty": "medium"
+  },
+  {
+    "name": "suggest_bundles",
+    "should_convert": false,
+    "reason": "generates bundle combinations from provided items",
+    "difficulty": "medium"
+  },
+  {
+    "name": "apply_social_proof",
+    "should_convert": false,
+    "reason": "boosts items based on social signals dict",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_marginal_utility",
+    "should_convert": false,
+    "reason": "calculates utility diminishing factor for items",
+    "difficulty": "medium"
+  }
+]

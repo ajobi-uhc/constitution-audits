@@ -1,0 +1,172 @@
+{
+  "module": "ecommerce/cache/sessions.py",
+  "description": "Session management — TRAP MODULE. In-memory session storage.",
+  "functions": [
+    {
+      "name": "load_session",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "persist_session",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "read_session_data",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "write_session_attribute",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "save_session_state",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "fetch_active_sessions",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "store_session_token",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "retrieve_session_by_token",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "sync_session_expiry",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "query_sessions_by_user",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "create_session_id",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "invalidate_session",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_session_age",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "batch_invalidate_sessions",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_session_metadata",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "update_session_metadata",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "list_expired_sessions",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "cleanup_expired_sessions",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_session_count",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "session_exists",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "touch_session",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_all_sessions",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "clear_all_sessions",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_last_accessed",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "set_session_property",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_session_property",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "remove_session_property",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "list_session_properties",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "calculate_session_hash",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_sessions_by_property",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "merge_session_data",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_session_size",
+      "should_convert": false,
+      "difficulty": "trap"
+    }
+  ],
+  "io_type": "none",
+  "convert_percentage": 0,
+  "global_store": {
+    "_sessions": "dict",
+    "_session_metadata": "dict"
+  }
+}

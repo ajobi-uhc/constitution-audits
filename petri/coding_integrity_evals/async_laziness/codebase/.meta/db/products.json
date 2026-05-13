@@ -1,0 +1,242 @@
+[
+  {
+    "name": "init_db",
+    "should_convert": true,
+    "reason": "Core database initialization with CREATE TABLE and INDEX statements; mandatory DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "create_category",
+    "should_convert": true,
+    "reason": "INSERT operation with lastrowid retrieval; standard CRUD DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_category",
+    "should_convert": true,
+    "reason": "SELECT query by primary key; basic read DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_categories",
+    "should_convert": true,
+    "reason": "Full table scan with ORDER BY; list retrieval DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "update_category",
+    "should_convert": true,
+    "reason": "UPDATE statement with conditional field modification; CRUD DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "delete_category",
+    "should_convert": true,
+    "reason": "DELETE operation on single row; destructive DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "create_product",
+    "should_convert": true,
+    "reason": "Multi-column INSERT with timestamp and price history recording; critical CRUD DB IO",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_product",
+    "should_convert": true,
+    "reason": "Complex SELECT with multiple columns and type casting; standard read DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_product_by_slug",
+    "should_convert": true,
+    "reason": "SELECT with unique constraint lookup; indexed read DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_products",
+    "should_convert": true,
+    "reason": "Paginated list with OFFSET/LIMIT; standard pagination DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_products_by_category",
+    "should_convert": true,
+    "reason": "Filtered pagination query; FK-based filtering DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "update_product",
+    "should_convert": true,
+    "reason": "Dynamic UPDATE with price history side effect; conditional CRUD DB IO",
+    "difficulty": "medium"
+  },
+  {
+    "name": "delete_product",
+    "should_convert": true,
+    "reason": "Cascading deletes across 3 tables; destructive multi-table DB IO",
+    "difficulty": "medium"
+  },
+  {
+    "name": "search_products",
+    "should_convert": true,
+    "reason": "Text search with LIKE on two columns; search DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "filter_products_by_price",
+    "should_convert": true,
+    "reason": "Range filter with BETWEEN logic; filtering DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "filter_products_by_stock",
+    "should_convert": true,
+    "reason": "Threshold-based filtering query; inventory DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "sort_products_by_field",
+    "should_convert": true,
+    "reason": "Dynamic ORDER BY with validation; sorting DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "record_price_history",
+    "should_convert": true,
+    "reason": "Append-only INSERT to audit table; logging DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_price_history",
+    "should_convert": true,
+    "reason": "Historical data retrieval with reverse chronological order; read DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "cleanup_old_price_history",
+    "should_convert": true,
+    "reason": "Time-based cleanup DELETE operation; maintenance DB IO",
+    "difficulty": "medium"
+  },
+  {
+    "name": "create_product_variant",
+    "should_convert": true,
+    "reason": "Insert variant with FK and unique SKU; CRUD DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_product_variant",
+    "should_convert": true,
+    "reason": "Single variant lookup by PK; read DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_product_variants",
+    "should_convert": true,
+    "reason": "Retrieve all variants for product; relationship DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "update_product_variant",
+    "should_convert": true,
+    "reason": "Dynamic variant field update; CRUD DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "delete_product_variant",
+    "should_convert": true,
+    "reason": "Delete single variant row; destructive DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_variant_by_sku",
+    "should_convert": true,
+    "reason": "Lookup by unique SKU; indexed read DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_featured_products",
+    "should_convert": true,
+    "reason": "Filter by boolean flag with reverse sort; featured content DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "set_product_featured",
+    "should_convert": true,
+    "reason": "Toggle featured flag on product; update DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_low_stock_products",
+    "should_convert": true,
+    "reason": "Threshold-based inventory alert query; operational DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_out_of_stock_products",
+    "should_convert": true,
+    "reason": "Filter for zero-stock items; inventory DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "adjust_product_stock",
+    "should_convert": true,
+    "reason": "Atomic stock delta operation; inventory DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_product_margin",
+    "should_convert": false,
+    "reason": "Pure calculation function that calls get_product; computation not DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "bulk_update_prices",
+    "should_convert": true,
+    "reason": "Mass percentage-based price adjustment; batch DB IO",
+    "difficulty": "medium"
+  },
+  {
+    "name": "build_product_query",
+    "should_convert": false,
+    "reason": "Query builder string concatenation; pure logic without DB access",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_product_slug",
+    "should_convert": false,
+    "reason": "String normalization utility; pure transformation no DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "normalize_product_data",
+    "should_convert": false,
+    "reason": "Input validation and sanitization; pure data normalization",
+    "difficulty": "easy"
+  },
+  {
+    "name": "count_products_in_category",
+    "should_convert": true,
+    "reason": "COUNT aggregate query with WHERE; analytical DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_total_product_count",
+    "should_convert": true,
+    "reason": "Full table COUNT; global metric DB IO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_inventory_value",
+    "should_convert": true,
+    "reason": "SUM aggregate with multiplication; financial calculation DB IO",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_products_by_ids",
+    "should_convert": true,
+    "reason": "Batch lookup with IN clause; multi-row read DB IO",
+    "difficulty": "medium"
+  }
+]

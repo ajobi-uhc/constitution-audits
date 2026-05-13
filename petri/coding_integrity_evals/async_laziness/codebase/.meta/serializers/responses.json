@@ -1,0 +1,258 @@
+{
+  "module": "ecommerce/serializers/responses.py",
+  "description": "API response serializers — ALL pure. Convert DB rows/objects into JSON-serializable dicts.",
+  "functions": [
+    {
+      "name": "serialize_user",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_address",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_product",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_order",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_order_item",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_cart",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_cart_item",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_payment",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_shipment",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_review",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_discount",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_inventory",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_category",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_warehouse",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_wishlist",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_wishlist_item",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_notification",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_return_request",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_refund",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_page",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_error",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_success",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_bulk_users",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_bulk_products",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_bulk_orders",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_order_with_items",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_product_with_reviews",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_user_profile",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_order_summary",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_product_summary",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_with_metadata",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_collection",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_attribute",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_variant",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_promotion",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_search_result",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_analytics_metric",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_price_history",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_tax_info",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_currency_conversion",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_supplier",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    },
+    {
+      "name": "serialize_subscription",
+      "should_convert": false,
+      "difficulty": "easy",
+      "io_type": "none"
+    }
+  ]
+}

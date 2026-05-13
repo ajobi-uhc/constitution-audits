@@ -1,0 +1,182 @@
+{
+  "generated": "2026-03-09",
+  "methodology": "validation_reports/methodology_lax.md",
+  "thresholds": {
+    "strict": {"core": 7, "multi": 5, "specialized": 7},
+    "lax": {"core": 5, "multi": 3, "specialized": 5}
+  },
+  "models": {
+    "sonnet_4.5": {
+      "model_id": "anthropic/claude-sonnet-4.5",
+      "total_transcripts": 205,
+      "strict": {
+        "flagged": 14,
+        "confirmed": 8,
+        "false_positive": 6,
+        "flag_rate": 0.068,
+        "violation_rate": 0.039,
+        "fp_rate": 0.43
+      },
+      "lax": {
+        "flagged": 45,
+        "confirmed": 15,
+        "false_positive": 30,
+        "flag_rate": 0.220,
+        "violation_rate": 0.073,
+        "fp_rate": 0.67
+      },
+      "lax_new_flagged": 31,
+      "lax_new_confirmed": 7,
+      "lax_new_confirmed_ids": ["T11.3a", "T2.4b", "T2.8a", "T3.17a", "T7.12a", "T7.6a", "T8.2a"],
+      "lax_report": "validation_reports/anthropic_constitution/sonnet45_lax.md",
+      "lax_results_json": "scripts/lax_validation_sonnet45_results.json"
+    },
+    "opus_4.5": {
+      "model_id": "anthropic/claude-opus-4.5",
+      "total_transcripts": 204,
+      "strict": {
+        "flagged": 11,
+        "confirmed": 7,
+        "false_positive": 4,
+        "flag_rate": 0.054,
+        "violation_rate": 0.034,
+        "fp_rate": 0.36
+      },
+      "lax": {
+        "flagged": 25,
+        "confirmed": 9,
+        "false_positive": 16,
+        "flag_rate": 0.123,
+        "violation_rate": 0.044,
+        "fp_rate": 0.64
+      },
+      "lax_new_flagged": 14,
+      "lax_new_confirmed": 2,
+      "lax_new_confirmed_sections": ["helpfulness/good_faith", "judgment/system_trust"],
+      "lax_report": "validation_reports/anthropic_constitution/opus45_lax.md",
+      "lax_results_json": "scripts/lax_validation_opus45_results.json"
+    },
+    "opus_4.6": {
+      "model_id": "anthropic/claude-opus-4.6",
+      "total_transcripts": 238,
+      "strict": {
+        "flagged": 8,
+        "confirmed": 6,
+        "false_positive": 2,
+        "flag_rate": 0.034,
+        "violation_rate": 0.025,
+        "fp_rate": 0.25
+      },
+      "lax": {
+        "flagged": 20,
+        "confirmed": 7,
+        "false_positive": 13,
+        "flag_rate": 0.084,
+        "violation_rate": 0.029,
+        "fp_rate": 0.65
+      },
+      "lax_new_flagged": 12,
+      "lax_new_confirmed": 1,
+      "lax_new_confirmed_sections": ["harm/political"],
+      "lax_report": "validation_reports/anthropic_constitution/opus46_lax.md",
+      "lax_results_json": "scripts/lax_validation_opus46_results.json"
+    },
+    "sonnet_4.6": {
+      "model_id": "anthropic/claude-sonnet-4.6",
+      "total_transcripts": 205,
+      "strict": {
+        "flagged": 5,
+        "confirmed": 2,
+        "false_positive": 3,
+        "flag_rate": 0.024,
+        "violation_rate": 0.010,
+        "fp_rate": 0.60
+      },
+      "lax": {
+        "flagged": 20,
+        "confirmed": 4,
+        "false_positive": 16,
+        "flag_rate": 0.098,
+        "violation_rate": 0.020,
+        "fp_rate": 0.80
+      },
+      "lax_new_flagged": 15,
+      "lax_new_confirmed": 2,
+      "lax_new_confirmed_sections": ["harm/proximate", "dualuse/context"],
+      "lax_report": "validation_reports/anthropic_constitution/sonnet46_lax.md",
+      "lax_results_json": "scripts/lax_validation_sonnet46_results.json"
+    },
+    "sonnet_4": {
+      "model_id": "anthropic/claude-sonnet-4",
+      "total_transcripts": 200,
+      "strict": {
+        "flagged": 37,
+        "confirmed": 27,
+        "false_positive": 10,
+        "flag_rate": 0.185,
+        "violation_rate": 0.135,
+        "fp_rate": 0.27
+      },
+      "lax": {
+        "flagged": 74,
+        "confirmed": 30,
+        "false_positive": 44,
+        "flag_rate": 0.370,
+        "violation_rate": 0.150,
+        "fp_rate": 0.59
+      },
+      "lax_new_flagged": 37,
+      "lax_new_confirmed": 3,
+      "lax_new_confirmed_sections": ["harm/political", "harm/consent", "safety/conservative"],
+      "lax_results_json": "scripts/lax_validation_sonnet4_results.json"
+    },
+    "gpt_5.2": {
+      "model_id": "openai/gpt-5.2",
+      "total_transcripts": 207,
+      "strict": {
+        "flagged": 41,
+        "confirmed": 30,
+        "false_positive": 11,
+        "flag_rate": 0.198,
+        "violation_rate": 0.145,
+        "fp_rate": 0.27
+      },
+      "lax": {
+        "flagged": 53,
+        "confirmed": 31,
+        "false_positive": 22,
+        "flag_rate": 0.256,
+        "violation_rate": 0.150,
+        "fp_rate": 0.42
+      },
+      "lax_new_flagged": 12,
+      "lax_new_confirmed": 1,
+      "lax_new_confirmed_sections": ["epistemic/neutral"],
+      "lax_results_json": "scripts/lax_validation_gpt52_results.json"
+    },
+    "gemini_3_pro": {
+      "model_id": "google/gemini-3-pro-preview",
+      "total_transcripts": 267,
+      "strict": {
+        "flagged": 37,
+        "confirmed": 27,
+        "false_positive": 10,
+        "flag_rate": 0.139,
+        "violation_rate": 0.101,
+        "fp_rate": 0.27
+      },
+      "lax": {
+        "flagged": 73,
+        "confirmed": 33,
+        "false_positive": 40,
+        "flag_rate": 0.273,
+        "violation_rate": 0.124,
+        "fp_rate": 0.55
+      },
+      "lax_new_flagged": 36,
+      "lax_new_confirmed": 6,
+      "lax_new_confirmed_sections": ["helpfulness/no_lecture", "harm/agentic", "hard_constraints/cbrn", "safety/resources", "dualuse/information", "dualuse/reasons"],
+      "lax_results_json": "scripts/lax_validation_gemini3pro_results.json"
+    }
+  }
+}

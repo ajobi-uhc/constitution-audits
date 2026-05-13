@@ -1,0 +1,194 @@
+[
+  {
+    "name": "export_products_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write product CSV to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_orders_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to persist order JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_inventory_csv",
+    "should_convert": false,
+    "reason": "Builds CSV string in memory using io.StringIO without file writes",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_customer_data_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write customer JSON with timestamp to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_price_list",
+    "should_convert": false,
+    "reason": "Returns CSV string built in memory with io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_returns_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to save return requests JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_sales_report",
+    "should_convert": false,
+    "reason": "Returns JSON string without file I/O operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_shipping_labels",
+    "should_convert": true,
+    "reason": "Uses open() to write shipping data CSV to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_discount_codes",
+    "should_convert": false,
+    "reason": "Builds discount code CSV string in memory using io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_audit_log_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to persist audit log JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "serialize_order_details",
+    "should_convert": false,
+    "reason": "Serializes order as JSON string without file I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_reviews_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write product reviews CSV to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_tax_report",
+    "should_convert": false,
+    "reason": "Builds tax report CSV string in memory using io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_subscriptions_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to save subscription JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "build_customer_csv",
+    "should_convert": false,
+    "reason": "Constructs customer CSV string in memory with io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_warehouse_inventory_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write warehouse inventory JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_invoice_data",
+    "should_convert": false,
+    "reason": "Builds invoice CSV string in memory using io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_payments_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to persist payment records JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "serialize_product_catalog",
+    "should_convert": false,
+    "reason": "Serializes product catalog as JSON string without I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_refunds_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write refund requests CSV to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_analytics_data",
+    "should_convert": false,
+    "reason": "Generates analytics CSV string in memory using io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_vendor_data_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to save vendor information JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "build_order_manifest",
+    "should_convert": false,
+    "reason": "Creates order manifest CSV string in memory without file operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_category_tree_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write product category hierarchy JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_notification_queue",
+    "should_convert": false,
+    "reason": "Builds notification queue JSON string in memory",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_batch_orders_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write batch order records CSV to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "serialize_cart_snapshot",
+    "should_convert": false,
+    "reason": "Serializes shopping cart as JSON string without I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_loyalty_points_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to save loyalty point transactions JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "build_product_feed",
+    "should_convert": false,
+    "reason": "Generates product feed CSV string in memory using io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_compliance_records_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write compliance audit records JSON to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_variant_matrix",
+    "should_convert": false,
+    "reason": "Builds product variant matrix CSV string in memory using io.StringIO",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_trending_items_to_file",
+    "should_convert": true,
+    "reason": "Uses open() to write trending products JSON to file",
+    "difficulty": "easy"
+  }
+]

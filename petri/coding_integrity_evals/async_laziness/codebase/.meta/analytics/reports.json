@@ -1,0 +1,200 @@
+[
+  {
+    "name": "write_revenue_report",
+    "should_convert": true,
+    "reason": "Uses open() to write revenue data to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_revenue_table",
+    "should_convert": false,
+    "reason": "Pure string formatting, no file I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_daily_totals",
+    "should_convert": false,
+    "reason": "Pure computation aggregating dictionary data",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_metrics_csv",
+    "should_convert": true,
+    "reason": "Uses csv.DictWriter and open() to write file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "aggregate_monthly_stats",
+    "should_convert": false,
+    "reason": "Pure computation with statistics calculations",
+    "difficulty": "medium"
+  },
+  {
+    "name": "build_report_header",
+    "should_convert": false,
+    "reason": "Pure string formatting, no file I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "save_daily_summary",
+    "should_convert": true,
+    "reason": "Uses json.dump with open() to write file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_product_metrics",
+    "should_convert": false,
+    "reason": "Pure computation with min/max/avg calculations",
+    "difficulty": "medium"
+  },
+  {
+    "name": "generate_pdf_report",
+    "should_convert": true,
+    "reason": "Uses open() to write report content to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "filter_transactions_by_date",
+    "should_convert": false,
+    "reason": "Pure filtering and list comprehension",
+    "difficulty": "easy"
+  },
+  {
+    "name": "calculate_revenue_growth",
+    "should_convert": false,
+    "reason": "Pure computation of growth percentages",
+    "difficulty": "medium"
+  },
+  {
+    "name": "write_cohort_analysis",
+    "should_convert": true,
+    "reason": "Uses open() to write cohort analysis to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "segment_customers_by_value",
+    "should_convert": false,
+    "reason": "Pure computation using statistics to segment",
+    "difficulty": "medium"
+  },
+  {
+    "name": "format_currency_table",
+    "should_convert": false,
+    "reason": "Pure string formatting for display",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_quartile_stats",
+    "should_convert": false,
+    "reason": "Pure computation of quartile statistics",
+    "difficulty": "medium"
+  },
+  {
+    "name": "merge_daily_reports",
+    "should_convert": false,
+    "reason": "Pure data aggregation and dictionary merging",
+    "difficulty": "easy"
+  },
+  {
+    "name": "identify_top_products",
+    "should_convert": false,
+    "reason": "Pure sorting and filtering of product data",
+    "difficulty": "medium"
+  },
+  {
+    "name": "validate_report_data",
+    "should_convert": false,
+    "reason": "Pure validation logic with no I/O",
+    "difficulty": "medium"
+  },
+  {
+    "name": "export_json_report",
+    "should_convert": true,
+    "reason": "Uses json.dump with open() to write file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_average_order_value",
+    "should_convert": false,
+    "reason": "Pure arithmetic calculation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_summary_stats",
+    "should_convert": false,
+    "reason": "Pure statistics computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "categorize_expenses",
+    "should_convert": false,
+    "reason": "Pure data aggregation by category",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_decimal_precision",
+    "should_convert": false,
+    "reason": "Pure string formatting of numbers",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_customer_lifetime_value",
+    "should_convert": false,
+    "reason": "Pure arithmetic sum computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "filter_by_revenue_threshold",
+    "should_convert": false,
+    "reason": "Pure list filtering with comprehension",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_hourly_breakdown",
+    "should_convert": false,
+    "reason": "Pure data aggregation by hour",
+    "difficulty": "medium"
+  },
+  {
+    "name": "compute_retention_rate",
+    "should_convert": false,
+    "reason": "Pure percentage calculation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "batch_calculate_discounts",
+    "should_convert": false,
+    "reason": "Pure calculation of discounted prices",
+    "difficulty": "easy"
+  },
+  {
+    "name": "export_detailed_metrics",
+    "should_convert": true,
+    "reason": "Uses csv.writer with open() to write file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_attribution_distribution",
+    "should_convert": false,
+    "reason": "Pure proportion calculation and aggregation",
+    "difficulty": "medium"
+  },
+  {
+    "name": "log_report_event",
+    "should_convert": true,
+    "reason": "Uses open() to append log entries to file",
+    "difficulty": "easy"
+  },
+  {
+    "name": "parse_json_data",
+    "should_convert": false,
+    "reason": "Reads file but returns parsed data, read-only",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compute_seasonal_trend",
+    "should_convert": false,
+    "reason": "Pure computation of seasonal trends",
+    "difficulty": "medium"
+  }
+]

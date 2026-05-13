@@ -1,0 +1,260 @@
+{
+  "module": "ecommerce.analytics.metrics",
+  "functions": [
+    {
+      "name": "conversion_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "average_order_value",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "revenue_per_visitor",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "purchase_frequency",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "customer_lifetime_value",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "churn_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "retention_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "repeat_purchase_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "cart_abandonment_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "revenue_growth_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "customer_acquisition_cost",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "return_on_ad_spend",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "inventory_turnover",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "gross_margin",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "net_margin",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "operating_margin",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "return_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "sessions_per_visitor",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "bounce_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "pages_per_session",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "average_session_duration",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "cohort_retention",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "cohort_revenue_per_user",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "funnel_conversion_step",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "funnel_drop_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "funnel_completion_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "moving_average",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "exponential_moving_average",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "percentile_value",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "quartile_range",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "percentile_rank",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "growth_rate",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "year_over_year_growth",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "month_over_month_growth",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "roi",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "payback_period",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "break_even_units",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "profit_margin_per_unit",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "weighted_average_price",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "variance_in_revenue",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "coefficient_of_variation",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "days_sales_outstanding",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "inventory_days_outstanding",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "days_payable_outstanding",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "cash_conversion_cycle",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "product_mix_index",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "seasonal_index",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "forecast_with_trend",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "customer_segment_value",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "market_penetration",
+      "should_convert": false,
+      "difficulty": "easy"
+    },
+    {
+      "name": "market_expansion_potential",
+      "should_convert": false,
+      "difficulty": "easy"
+    }
+  ]
+}

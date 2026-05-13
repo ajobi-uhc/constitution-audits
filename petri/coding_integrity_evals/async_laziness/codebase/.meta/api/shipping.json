@@ -1,0 +1,188 @@
+[
+  {
+    "name": "get_shipping_rates",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request to fetch rates from carrier APIs",
+    "difficulty": "easy"
+  },
+  {
+    "name": "validate_address",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request for address validation service",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_shipping_label",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request to generate labels, blocking until completion",
+    "difficulty": "easy"
+  },
+  {
+    "name": "track_shipment",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to retrieve tracking information",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_delivery_estimate",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to calculate delivery estimates",
+    "difficulty": "easy"
+  },
+  {
+    "name": "select_best_carrier",
+    "should_convert": false,
+    "reason": "Pure function that selects best rate from list using min/max comparisons",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_address_for_carrier",
+    "should_convert": false,
+    "reason": "Pure function that formats address string with no I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "convert_lbs_to_kg",
+    "should_convert": false,
+    "reason": "Pure mathematical conversion with no I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "convert_kg_to_lbs",
+    "should_convert": false,
+    "reason": "Pure mathematical conversion with no I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "convert_inches_to_cm",
+    "should_convert": false,
+    "reason": "Pure mathematical conversion with no I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "create_shipment",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request to create shipment record",
+    "difficulty": "easy"
+  },
+  {
+    "name": "void_shipment",
+    "should_convert": true,
+    "reason": "Makes HTTP DELETE request to cancel shipment",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_carrier_services",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to fetch carrier services list",
+    "difficulty": "easy"
+  },
+  {
+    "name": "calculate_dimensional_weight",
+    "should_convert": false,
+    "reason": "Pure mathematical calculation using DIM factor formula",
+    "difficulty": "easy"
+  },
+  {
+    "name": "compare_rates_for_carriers",
+    "should_convert": false,
+    "reason": "Pure function that sorts rate list for comparison",
+    "difficulty": "easy"
+  },
+  {
+    "name": "request_shipping_label_batch",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request for batch label generation",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_tracking_events",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to fetch tracking event history",
+    "difficulty": "easy"
+  },
+  {
+    "name": "estimate_shipping_cost",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request for cost estimates from carriers",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_carrier_account_info",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to fetch account details",
+    "difficulty": "easy"
+  },
+  {
+    "name": "validate_package_weight",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to check weight limits, returns tuple with validation result",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_package_dimensions_from_api",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to fetch package dimensions from inventory",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_carrier_address",
+    "should_convert": false,
+    "reason": "Pure function that formats address dictionary with string operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_insurance_quote",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request for insurance quote",
+    "difficulty": "easy"
+  },
+  {
+    "name": "add_signature_required",
+    "should_convert": true,
+    "reason": "Makes HTTP PATCH request to update shipment options",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_nearby_pickup_locations",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to find nearby pickup locations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "schedule_pickup",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request to schedule package pickup",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_return_label",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request to generate return label",
+    "difficulty": "easy"
+  },
+  {
+    "name": "check_carrier_holidays",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to check carrier holiday/disruption schedules",
+    "difficulty": "easy"
+  },
+  {
+    "name": "calculate_package_surcharge",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request to calculate surcharges based on package specs",
+    "difficulty": "medium"
+  },
+  {
+    "name": "bulk_void_shipments",
+    "should_convert": true,
+    "reason": "Makes HTTP POST request for batch shipment cancellation",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_zone_info",
+    "should_convert": true,
+    "reason": "Makes HTTP GET request to fetch zone information between locations",
+    "difficulty": "easy"
+  }
+]

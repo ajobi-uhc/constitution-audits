@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+
+# Large per-run artifacts that may accumulate when re-running locally — only commit
+# the curated transcripts that are linked from validation reports.
+petri/results/
+petri/logs/
+surf/results/

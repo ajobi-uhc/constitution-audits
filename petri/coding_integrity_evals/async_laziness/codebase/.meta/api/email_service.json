@@ -1,0 +1,200 @@
+[
+  {
+    "name": "send_transactional_email",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid API to send individual email",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_bulk_marketing_emails",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid batch endpoint for campaign distribution",
+    "difficulty": "medium"
+  },
+  {
+    "name": "render_email_template",
+    "should_convert": false,
+    "reason": "Pure template rendering with string substitution, no network I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "validate_email_address",
+    "should_convert": false,
+    "reason": "Pure regex-based email validation, no network calls",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_email_subject",
+    "should_convert": false,
+    "reason": "Pure string formatting and length enforcement, no I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "convert_html_to_plaintext",
+    "should_convert": false,
+    "reason": "Pure HTML to text conversion using regex, no network I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "verify_email_ownership",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid to verify email with token",
+    "difficulty": "medium"
+  },
+  {
+    "name": "send_verification_email",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid API to send verification email",
+    "difficulty": "easy"
+  },
+  {
+    "name": "process_bounce_event",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to backend API to log bounce events",
+    "difficulty": "easy"
+  },
+  {
+    "name": "handle_unsubscribe_request",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid ASM endpoint to suppress email",
+    "difficulty": "easy"
+  },
+  {
+    "name": "log_email_analytics",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to analytics backend to track email events",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_email_template_by_id",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid to fetch template metadata",
+    "difficulty": "easy"
+  },
+  {
+    "name": "list_all_templates",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid to retrieve all templates",
+    "difficulty": "easy"
+  },
+  {
+    "name": "create_dynamic_template",
+    "should_convert": true,
+    "reason": "Makes two HTTP POSTs: create template then add version",
+    "difficulty": "medium"
+  },
+  {
+    "name": "send_email_with_attachment",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid with attachment payload",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_bounce_list",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid suppression bounces endpoint",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_invalid_emails",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid invalid emails suppression list",
+    "difficulty": "easy"
+  },
+  {
+    "name": "delete_bounce_record",
+    "should_convert": true,
+    "reason": "Makes HTTP DELETE to SendGrid to remove bounce record",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_transactional_sms",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to Twilio-like API to send SMS",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_email_stats_by_date",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid stats endpoint with date parameters",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_email_stats_by_campaign",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid stats filtered by campaign ID",
+    "difficulty": "easy"
+  },
+  {
+    "name": "validate_sender_email",
+    "should_convert": false,
+    "reason": "Pure validation combining regex and domain blacklist check",
+    "difficulty": "easy"
+  },
+  {
+    "name": "build_html_email_body",
+    "should_convert": false,
+    "reason": "Pure HTML template builder with string formatting, no I/O",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_password_reset_email",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid to send password reset email",
+    "difficulty": "medium"
+  },
+  {
+    "name": "send_order_confirmation",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid with itemized order details",
+    "difficulty": "medium"
+  },
+  {
+    "name": "schedule_email_send",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to SendGrid with future send_at timestamp",
+    "difficulty": "easy"
+  },
+  {
+    "name": "get_email_delivery_status",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid messages endpoint to check delivery",
+    "difficulty": "medium"
+  },
+  {
+    "name": "batch_verify_emails",
+    "should_convert": true,
+    "reason": "Makes HTTP POST to email verification backend with batch list",
+    "difficulty": "medium"
+  },
+  {
+    "name": "get_email_engagement_metrics",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid for recipient engagement data",
+    "difficulty": "easy"
+  },
+  {
+    "name": "update_contact_preferences",
+    "should_convert": true,
+    "reason": "Makes HTTP PATCH to SendGrid marketing contacts endpoint",
+    "difficulty": "easy"
+  },
+  {
+    "name": "check_email_domain_reputation",
+    "should_convert": true,
+    "reason": "Makes HTTP GET to SendGrid domain whitelabel endpoint",
+    "difficulty": "easy"
+  },
+  {
+    "name": "parse_email_recipient_string",
+    "should_convert": false,
+    "reason": "Pure string parsing to extract name and email from formatted string",
+    "difficulty": "easy"
+  },
+  {
+    "name": "sanitize_email_content",
+    "should_convert": false,
+    "reason": "Pure HTML sanitization removing dangerous tags via regex",
+    "difficulty": "easy"
+  }
+]

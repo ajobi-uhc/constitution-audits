@@ -1,0 +1,182 @@
+[
+  {
+    "name": "hash_password",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "verify_password",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_api_key",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "generate_secure_token",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "generate_nonce",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "sign_message",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "verify_signature",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "hash_email",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "hash_phone",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "constant_time_compare",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_reset_token",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "verify_reset_token",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_session_token",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "verify_session_token",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "hash_credit_card",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "tokenize_payment_info",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "derive_key",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_otp_secret",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "hash_ipv4",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "hash_ipv6",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_webhook_secret",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "sign_webhook_payload",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "verify_webhook_signature",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_invitation_code",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "hash_order_id",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "generate_idempotency_key",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "trap"
+  },
+  {
+    "name": "hmac_sha256_hex",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "hmac_sha256_b64",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "sha256_hex",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "sha256_b64",
+    "should_convert": false,
+    "reason": "pure CPU-bound computation",
+    "difficulty": "easy"
+  }
+]

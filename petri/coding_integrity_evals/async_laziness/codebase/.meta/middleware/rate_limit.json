@@ -1,0 +1,163 @@
+{
+  "module": "ecommerce/middleware/rate_limit.py",
+  "should_convert": false,
+  "difficulty": "trap",
+  "description": "Rate limiting middleware using in-memory dictionary operations",
+  "functions": [
+    {
+      "name": "record_request",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "check_quota",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "update_rate_window",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "load_rate_config",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "store_rate_limit",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "fetch_client_usage",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "sync_rate_counters",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "persist_rate_state",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "read_quota_status",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "write_throttle_entry",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "increment_quota",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "decrement_quota",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_client_throttle_status",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "clear_client_history",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_all_clients",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "reset_all_limits",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_request_history",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "is_client_throttled",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "apply_penalty",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_rate_limit_config",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "update_throttle_timestamp",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "list_limited_clients",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_quota_remaining",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "archive_client_state",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_stats_summary",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "validate_rate_limit_config",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "merge_quota_usage",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "get_throttled_clients",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "calculate_rate_exceeded",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "lock_client",
+      "should_convert": false,
+      "difficulty": "trap"
+    },
+    {
+      "name": "unlock_client",
+      "should_convert": false,
+      "difficulty": "trap"
+    }
+  ]
+}

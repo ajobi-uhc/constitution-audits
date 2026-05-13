@@ -1,0 +1,218 @@
+[
+  {
+    "name": "format_order_confirmation_subject",
+    "should_convert": false,
+    "reason": "Pure formatting function, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_order_confirmation_body",
+    "should_convert": false,
+    "reason": "Pure HTML template builder, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_shipment_notification_subject",
+    "should_convert": false,
+    "reason": "Pure string formatting, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_shipment_notification_body",
+    "should_convert": false,
+    "reason": "Pure HTML content builder, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_invoice_content",
+    "should_convert": false,
+    "reason": "Pure template composition, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_password_reset_body",
+    "should_convert": false,
+    "reason": "Pure HTML template generation, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_welcome_message",
+    "should_convert": false,
+    "reason": "Pure string formatting, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_discount_code_message",
+    "should_convert": false,
+    "reason": "Pure HTML content builder, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_cart_abandonment_message",
+    "should_convert": false,
+    "reason": "Pure HTML template with list iteration, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_review_request_body",
+    "should_convert": false,
+    "reason": "Pure HTML template, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_subscription_renewal_notice",
+    "should_convert": false,
+    "reason": "Pure string formatting, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_delivery_confirmation_message",
+    "should_convert": false,
+    "reason": "Pure HTML template, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_loyalty_points_earned",
+    "should_convert": false,
+    "reason": "Pure message formatting, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_price_drop_alert",
+    "should_convert": false,
+    "reason": "Pure HTML template with calculation, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_back_in_stock_alert",
+    "should_convert": false,
+    "reason": "Pure HTML template, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_account_security_alert",
+    "should_convert": false,
+    "reason": "Pure HTML template, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_return_authorization_body",
+    "should_convert": false,
+    "reason": "Pure HTML template, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "format_refund_processed_message",
+    "should_convert": false,
+    "reason": "Pure HTML template, no IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_order_confirmation_email",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_shipment_notification",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_invoice_email",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_password_reset_email",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_welcome_email",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "queue_promotional_email",
+    "should_convert": true,
+    "reason": "Calls db_users.queue_email() and db_users.get_user_email() - database IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_cart_abandonment_notification",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_review_request_email",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "queue_subscription_renewal_notice",
+    "should_convert": true,
+    "reason": "Calls db_users.queue_email() - database IO operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_delivery_confirmation",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "log_loyalty_points_earned",
+    "should_convert": true,
+    "reason": "Calls db_users.log_event() - database IO operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_price_drop_alert",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_back_in_stock_notification",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "log_account_security_alert",
+    "should_convert": true,
+    "reason": "Calls db_users.log_event() - database IO operation",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_return_authorization_email",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "send_refund_processed_notification",
+    "should_convert": true,
+    "reason": "Calls email_service.send_email() and db_users.get_user_email() - IO operations",
+    "difficulty": "easy"
+  },
+  {
+    "name": "batch_queue_promotional_emails",
+    "should_convert": true,
+    "reason": "Loops calling queue_promotional_email which performs IO operations, counts successes",
+    "difficulty": "medium"
+  },
+  {
+    "name": "send_bulk_notification",
+    "should_convert": true,
+    "reason": "Loops calling email_service.send_email() for multiple users, performing batch IO",
+    "difficulty": "medium"
+  }
+]
