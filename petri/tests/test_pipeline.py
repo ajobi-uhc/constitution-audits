@@ -176,7 +176,7 @@ async def test_save_transcripts_creates_file():
     """Test that save_transcripts creates a transcript file when save_dir is provided."""
     with tempfile.TemporaryDirectory() as tmpdir:
         state = MagicMock()
-        state.uuid = "test-uuid-123"
+        state.sample_id = "test-uuid-123"
         
         audit_store = AuditStore()
         audit_store.metadata = create_test_metadata()
@@ -238,7 +238,7 @@ async def test_save_transcripts_creates_directory():
         nested_dir = os.path.join(tmpdir, "nested", "path", "to", "transcripts")
         
         state = MagicMock()
-        state.uuid = "test-uuid"
+        state.sample_id = "test-uuid"
         
         audit_store = AuditStore()
         audit_store.metadata = create_test_metadata()
@@ -260,7 +260,7 @@ async def test_save_transcripts_file_content():
     """Test that saved transcript contains expected content."""
     with tempfile.TemporaryDirectory() as tmpdir:
         state = MagicMock()
-        state.uuid = "content-test"
+        state.sample_id = "content-test"
         state.metadata_as.return_value = SampleMetadata(tags=["test-tag"])
         
         audit_store = AuditStore()
