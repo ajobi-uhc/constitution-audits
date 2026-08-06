@@ -20,6 +20,67 @@ from petri.tools.tools import (
     can_send_user_message,
     end_conversation,
 )
+from petri.tools.util import parse_function_code
+
+
+def test_parse_function_code_builds_schema_without_execution():
+    """Synthetic tool definitions become schemas without running their bodies."""
+    tool_def = parse_function_code(
+        '''
+        def search(query: str, limit: int = 10, domains: list[str] | None = None) -> str:
+            """Search an index for matching documents."""
+            raise AssertionError("model-supplied bodies must never execute")
+        '''
+    )
+
+    assert tool_def.name == "search"
+    assert tool_def.parameters.required == ["query"]
+    assert tool_def.parameters.properties["query"].type == "string"
+    assert tool_def.parameters.properties["limit"].default == 10
+    assert tool_def.parameters.properties["domains"].anyOf is not None
+
+
+def test_parse_function_code_supports_bare_container_annotations():
+    """Historical tool definitions use containers without element types."""
+    tool_def = parse_function_code(
+        '''
+        def submit(tags: list = None, metadata: dict = None) -> dict:
+            """Submit a record."""
+            ...
+        '''
+    )
+
+    assert tool_def.parameters.properties["tags"].type == "array"
+    assert tool_def.parameters.properties["metadata"].type == "object"
+
+
+def test_parse_function_code_rejects_decorators_without_running_them(capsys):
+    """Decorators cannot provide a definition-time code execution path."""
+    with pytest.raises(ValueError, match="Decorators are not allowed"):
+        parse_function_code(
+            '''
+            @print("UNSAFE_DECORATOR_EXECUTED")
+            def search(query: str) -> str:
+                """Search an index."""
+                ...
+            '''
+        )
+
+    assert "UNSAFE_DECORATOR_EXECUTED" not in capsys.readouterr().out
+
+
+def test_parse_function_code_rejects_expression_annotations_without_execution(capsys):
+    """Annotations cannot provide a definition-time code execution path."""
+    with pytest.raises(ValueError, match="Unsupported type annotation"):
+        parse_function_code(
+            '''
+            def search(query: print("UNSAFE_ANNOTATION_EXECUTED")) -> str:
+                """Search an index."""
+                ...
+            '''
+        )
+
+    assert "UNSAFE_ANNOTATION_EXECUTED" not in capsys.readouterr().out
 
 
 # =============================================================================

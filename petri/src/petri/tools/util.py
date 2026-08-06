@@ -1,15 +1,82 @@
 import ast
 from textwrap import dedent
+from typing import Any
 
 from inspect_ai.model import (
     ChatMessage,
     ChatMessageAssistant,
     ChatMessageTool,
 )
-from inspect_ai.tool import ToolCall, ToolDef
+from inspect_ai.tool import ToolCall, ToolDef, ToolParams
 
 from petri.formatting.messages import format_content as _format_content
 from petri.formatting.messages import format_tool_call as _format_tool_call
+
+_SIMPLE_ANNOTATIONS: dict[str, dict[str, Any]] = {
+    "str": {"type": "string"},
+    "int": {"type": "integer"},
+    "float": {"type": "number"},
+    "bool": {"type": "boolean"},
+    "None": {"type": "null"},
+}
+
+
+def _annotation_schema(annotation: ast.expr) -> dict[str, Any]:
+    """Convert a restricted Python type annotation to JSON Schema."""
+    if isinstance(annotation, ast.Name):
+        if annotation.id in _SIMPLE_ANNOTATIONS:
+            return _SIMPLE_ANNOTATIONS[annotation.id].copy()
+        if annotation.id in {"Any", "object"}:
+            return {}
+        if annotation.id in {"list", "List", "set", "Set", "tuple", "Tuple"}:
+            return {"type": "array"}
+        if annotation.id in {"dict", "Dict"}:
+            return {"type": "object"}
+        raise ValueError(f"Unsupported type annotation: {annotation.id}")
+
+    if isinstance(annotation, ast.Constant) and annotation.value is None:
+        return {"type": "null"}
+
+    if isinstance(annotation, ast.BinOp) and isinstance(annotation.op, ast.BitOr):
+        return {
+            "anyOf": [
+                _annotation_schema(annotation.left),
+                _annotation_schema(annotation.right),
+            ]
+        }
+
+    if isinstance(annotation, ast.Subscript) and isinstance(annotation.value, ast.Name):
+        container = annotation.value.id
+        if container in {"list", "List", "set", "Set", "tuple", "Tuple"}:
+            return {"type": "array", "items": _annotation_schema(annotation.slice)}
+        if container in {"dict", "Dict"}:
+            if (
+                not isinstance(annotation.slice, ast.Tuple)
+                or len(annotation.slice.elts) != 2
+            ):
+                raise ValueError(
+                    "Dictionary annotations must specify key and value types"
+                )
+            key, value = annotation.slice.elts
+            if not isinstance(key, ast.Name) or key.id != "str":
+                raise ValueError("Dictionary keys must be strings")
+            return {
+                "type": "object",
+                "additionalProperties": _annotation_schema(value),
+            }
+        if container in {"Optional", "Union"}:
+            members = (
+                list(annotation.slice.elts)
+                if isinstance(annotation.slice, ast.Tuple)
+                else [annotation.slice]
+            )
+            if container == "Optional":
+                members.append(ast.Constant(value=None))
+            return {"anyOf": [_annotation_schema(member) for member in members]}
+
+    raise ValueError(
+        "Unsupported type annotation. Use primitive types, containers, or unions."
+    )
 
 
 def parse_function_code(function_code: str) -> ToolDef:
@@ -17,9 +84,8 @@ def parse_function_code(function_code: str) -> ToolDef:
     Parse Python function code and create an inspect ToolDef for synthetic tools.
 
     This function takes Python function code provided by the auditor and converts
-    it into a ToolDef that can be used by the target model. The function validates
-    the code structure, extracts the docstring, and replaces the function body
-    with a placeholder to prevent actual execution.
+    its signature into a ToolDef that can be used by the target model. It never
+    compiles or executes the supplied code.
 
     Args:
         function_code: Python function code string with docstring
@@ -28,61 +94,80 @@ def parse_function_code(function_code: str) -> ToolDef:
         ToolDef: An inspect-ai tool definition ready for use by the target model
 
     Raises:
-        ValueError: If the code is invalid, function name doesn't match,
-                   missing docstring, or contains non-constant defaults
+        ValueError: If the code is invalid, unsafe, missing a docstring, or uses
+            an unsupported signature.
 
     Example:
         ```python
         code = '''def calculate_square(x: int) -> int:
             \"\"\"Calculate the square of a number.\"\"\"
             return x * x'''
-        tool_def = parse_function_code("calculate_square", code)
+        tool_def = parse_function_code(code)
         ```
 
-    Note:
-        The function body is replaced with a ValueError raise to prevent
-        actual execution - the auditor simulates tool responses instead.
+    The function body is ignored because the auditor simulates tool responses.
     """
     function_code = dedent(function_code)
     parsed = ast.parse(function_code.strip())
 
     if len(parsed.body) != 1 or not isinstance(parsed.body[0], ast.FunctionDef):
-        raise ValueError("Code must contain exactly one function definition and nothing else")
+        raise ValueError(
+            "Code must contain exactly one function definition and nothing else"
+        )
 
     func_def = parsed.body[0]
+
+    if func_def.decorator_list:
+        raise ValueError("Decorators are not allowed in synthetic tool definitions")
+    if func_def.args.vararg is not None or func_def.args.kwarg is not None:
+        raise ValueError("Variadic parameters are not supported")
+    if func_def.args.posonlyargs:
+        raise ValueError("Positional-only parameters are not supported")
 
     docstring = ast.get_docstring(func_def)
     if docstring is None:
         raise ValueError("Function must have a docstring")
 
-    # Replace the function body with a raise statement
-    func_def.body = [ast.Expr(value=ast.Constant(value=docstring))]
-    func_def.body.append(
-        ast.Raise(
-            exc=ast.Call(
-                func=ast.Name(id="ValueError", ctx=ast.Load()),
-                args=[ast.Constant(value="This tool should have never been called!")],
-                keywords=[],
-            )
-        )
+    positional_args = list(func_def.args.args)
+    positional_defaults = [None] * (
+        len(positional_args) - len(func_def.args.defaults)
+    ) + list(func_def.args.defaults)
+    keyword_args = list(func_def.args.kwonlyargs)
+    keyword_defaults = list(func_def.args.kw_defaults)
+
+    properties: dict[str, dict[str, Any]] = {}
+    required: list[str] = []
+    for arg, default in zip(
+        positional_args + keyword_args,
+        positional_defaults + keyword_defaults,
+        strict=True,
+    ):
+        if arg.annotation is None:
+            raise ValueError(f"Parameter '{arg.arg}' must have a type annotation")
+        schema = _annotation_schema(arg.annotation)
+        if default is None:
+            required.append(arg.arg)
+        elif isinstance(default, ast.Constant):
+            schema["default"] = default.value
+        else:
+            raise ValueError("Parameter defaults must be literal constants")
+        properties[arg.arg] = schema
+
+    if func_def.returns is not None:
+        _annotation_schema(func_def.returns)
+
+    async def synthetic_tool(**_: object) -> str:
+        raise RuntimeError("Synthetic tools must be simulated by the auditor")
+
+    synthetic_tool.__name__ = func_def.name
+    synthetic_tool.__doc__ = docstring
+    return ToolDef(
+        synthetic_tool,
+        name=func_def.name,
+        description=docstring,
+        parameters=ToolParams(properties=properties, required=required),
     )
 
-    # Validate that all defaults are constants for safety
-    for arg in func_def.args.defaults:
-        if not isinstance(arg, ast.Constant):
-            raise ValueError(f"Argument defaults must be constants, found: {type(arg)}")
-
-    # Generate the processed function code
-    processed_code = ast.unparse(func_def)
-
-    # Execute the function definition in a controlled namespace
-    namespace = {}
-    exec(processed_code, {}, namespace)
-
-    # Get the created function
-    synthetic_tool_func = namespace[func_def.name]
-
-    return ToolDef(synthetic_tool_func)
 
 def format_target_response(response_message: ChatMessageAssistant, message_index: int | None = None) -> str:
     """
