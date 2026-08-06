@@ -8,4 +8,5 @@ __pycache__/
 # the curated transcripts that are linked from validation reports.
 petri/results/
 petri/logs/
+logs/
 surf/results/
