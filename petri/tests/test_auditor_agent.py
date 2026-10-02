@@ -220,7 +220,7 @@ def test_tool_creation_and_use():
             model="auditor",
             tool_name="create_tool",
             tool_arguments={
-                "environemnt_description": "A calculator for math",
+                "environment_description": "A calculator for math",
                 "function_code": '''def calculator(expression: str) -> str:
     """Calculate a math expression."""
     pass'''
@@ -335,7 +335,7 @@ def test_tool_error_handling():
         ModelOutput.for_tool_call(
             model="auditor",
             tool_name="create_tool",
-            tool_arguments={"environemnt_description": "Division tool", "function_code": '''def divide(a: int, b: int) -> str:
+            tool_arguments={"environment_description": "Division tool", "function_code": '''def divide(a: int, b: int) -> str:
     """Divide two numbers."""
     pass'''},
             content="Creating divide tool",
@@ -664,7 +664,7 @@ def test_rollback_with_tool_calls():
         ModelOutput.for_tool_call(
             model="auditor",
             tool_name="create_tool",
-            tool_arguments={"environemnt_description": "Search tool", "function_code": '''def search(query: str) -> str:
+            tool_arguments={"environment_description": "Search tool", "function_code": '''def search(query: str) -> str:
     """Search for information."""
     pass'''},
             content="Create search",
@@ -834,7 +834,7 @@ def test_complex_conversation_with_rollbacks_reset_and_prefill():
             model="auditor",
             tool_name="create_tool",
             tool_arguments={
-                "environemnt_description": "Python code executor",
+                "environment_description": "Python code executor",
                 "function_code": '''def execute_code(code: str) -> str:
     """Execute Python code and return the output."""
     pass'''

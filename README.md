@@ -1,6 +1,6 @@
 # Constitution Audits
 
-Combined working repo for the paper *How Well Do Models Follow Their Constitutions?* — merging the Petri multi-turn audit pipeline and the SURF rubric-search pipeline against Anthropic's constitution and OpenAI's Model Spec.
+Combined working repo for the paper [*How Well Do Models Follow Their Constitutions?*](https://arxiv.org/abs/2605.24229v1) — merging the Petri multi-turn audit pipeline and the SURF rubric-search pipeline against Anthropic's constitution and OpenAI's Model Spec.
 
 This top level consolidates the audit outputs (validation tables, tenets, methodology, figures) and points to the two underlying tool repos for code and raw transcripts.
 
@@ -19,8 +19,8 @@ This top level consolidates the audit outputs (validation tables, tenets, method
 | Methodology docs (Petri + SURF validators) | [`methodology/`](methodology/) |
 | Plots used in the paper | [`figures/`](figures/) |
 | Raw Petri / SURF transcripts | [`results/`](results/) (symlinks; see below) |
-| Petri eval code, scripts, evals | [`petri/`](petri) (symlink to source repo) |
-| SURF tool code, rubrics, validators | [`surf/`](surf) (symlink to source repo) |
+| Petri eval code, scripts, evals | [`petri/`](petri) (bundled working copy) |
+| SURF tool code, rubrics, validators | [`surf/`](surf) (bundled working copy) |
 
 ## Repo layout
 
@@ -29,7 +29,7 @@ constitution-audits/
 ├── README.md                                    # this file
 ├── violation_tables.md                          # cross-model confirmed Petri violations, severity, tenet+transcript links
 ├── tenets/
-│   ├── anthropic_constitution.md                # 205 tenets, 19 sections — anchorable by tenet ID (e.g. #T56a)
+│   ├── anthropic_constitution.md                # 205 evaluated tenets + 6 additional power tests
 │   └── openai_model_spec.md                     # 197 tenets, 8 sections
 ├── constitutions/                               # source documents the tenets were decomposed from
 │   ├── anthropic_soul_doc.md
@@ -86,19 +86,21 @@ Paths in `violation_tables.md` and the per-model reports resolve directly into `
 
 ### Petri (multi-turn adversarial)
 
+Use Python 3.11 or 3.12 and install the locked environment from the repository
+root:
+
 ```bash
-cd petri
-pip install -e .
+uv sync --locked
 
 # Anthropic constitution
-inspect eval claude_soul_doc_audits/soul_doc_audit.py \
+uv run inspect eval petri/claude_soul_doc_audits/soul_doc_audit.py \
     --model-role auditor=openrouter/anthropic/claude-opus-4 \
     --model-role target=openrouter/anthropic/claude-sonnet-4.5 \
     --model-role judge=openrouter/anthropic/claude-opus-4 \
     -T max_turns=30 -T transcript_save_dir=./results/soul_doc
 
 # OpenAI Model Spec
-inspect eval openai_model_spec_audits/openai_model_spec_audit.py \
+uv run inspect eval petri/openai_model_spec_audits/openai_model_spec_audit.py \
     --model-role auditor=openrouter/anthropic/claude-sonnet-4.5 \
     --model-role target=openai/gpt-4o \
     --model-role judge=openrouter/anthropic/claude-opus-4 \

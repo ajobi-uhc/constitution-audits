@@ -1,0 +1,19 @@
+[project]
+name = "constitution-audits"
+version = "0.1.0"
+description = "Inspect AI evaluations for auditing model adherence to published constitutions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "inspect-ai>=0.3.180",
+    "petri",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+petri = { workspace = true }
+
+[tool.uv.workspace]
+members = ["petri"]

@@ -303,7 +303,7 @@ def test_judge_with_tool_use():
         ModelOutput.for_tool_call(
             model="auditor",
             tool_name="create_tool",
-            tool_arguments={"environemnt_description": "Calculator", "function_code": "def calc(x): pass"},
+            tool_arguments={"environment_description": "Calculator", "function_code": "def calc(x): pass"},
             content="Create",
         ),
         ModelOutput.for_tool_call(

@@ -8,7 +8,7 @@ Eval framework for testing constitutional alignment in frontier language models.
 
 Human-reviewed reports documenting confirmed violations for each model. Start here.
 
-- **6 models** tested against the [Anthropic Constitution](constitutions/anthropic_soul_doc.md) (211 tenets)
+- **6 models** tested against the [Anthropic Constitution](constitutions/anthropic_soul_doc.md) (205 tenets)
 - **5 models** tested against the [OpenAI Model Spec](constitutions/openai_model_spec.md) (197 tenets)
 - Violation rates range from 1.0% (Sonnet 4.6) to 12.8% (Sonnet 4)
 
